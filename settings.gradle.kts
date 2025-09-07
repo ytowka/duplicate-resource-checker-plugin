@@ -19,6 +19,10 @@ dependencyResolutionManagement {
     }
 }
 
+includeBuild("build-logic")
+
 rootProject.name = "DuplicateResourceCheckerPlugin"
 include(":app")
- 
+include(":feature-a")
+include(":feature-b")
+include(":feature-c")

@@ -1,4 +1,4 @@
-package com.example.duplicateresourcechecker
+package com.danilkha.featurea
 
 import org.junit.Test
 

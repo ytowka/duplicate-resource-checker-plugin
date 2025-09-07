@@ -1,36 +1,23 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("org.danilkha.reportAndroid")
 }
 
 android {
-    namespace = "com.danilkha.duplicateresourcechecker"
-    compileSdk = 36
+    namespace = "com.danilkha.featurea"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.danilkha.duplicateresourcechecker"
         minSdk = 26
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    flavorDimensions += "server"
-    productFlavors {
-        create("prod") {
-            dimension = "server"
-        }
-        create("dev") {
-            dimension = "server"
         }
     }
     compileOptions {
@@ -43,11 +30,6 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":feature-a"))
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    debugImplementation(project(":feature-b"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
