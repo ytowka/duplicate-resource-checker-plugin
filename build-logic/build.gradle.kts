@@ -19,5 +19,9 @@ gradlePlugin {
             id = "org.danilkha.reportAndroid"
             implementationClass = "plugins.ReportAndroidPlugin"
         }
+        create("duplicateResPlugin") {
+            id = "org.danilkha.duplicateRes"
+            implementationClass = "duplicateres.plugin.DuplicateResourceCheckerPlugin"
+        }
     }
 }

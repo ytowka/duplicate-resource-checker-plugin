@@ -1,10 +1,14 @@
+import com.android.build.api.variant.AndroidComponentsExtension
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("org.danilkha.reportAndroid")
+    //id("org.danilkha.reportAndroid")
+    id("org.danilkha.duplicateRes")
 }
 
 android {
+
     namespace = "com.danilkha.duplicateresourcechecker"
     compileSdk = 36
 
@@ -25,12 +29,23 @@ android {
         }
     }
     flavorDimensions += "server"
+    flavorDimensions += "store"
     productFlavors {
         create("prod") {
             dimension = "server"
         }
         create("dev") {
             dimension = "server"
+        }
+        create("google") {
+            dimension = "store"
+        }
+        create("huawei") {
+            dimension = "store"
+        }
+        create("rustore") {
+            matchingFallbacks += listOf("google")
+            dimension = "store"
         }
     }
     compileOptions {
@@ -47,7 +62,7 @@ dependencies {
     implementation(project(":feature-a"))
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    debugImplementation(project(":feature-b"))
+    implementation(project(":feature-b"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

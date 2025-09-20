@@ -1,3 +1,5 @@
+import com.android.build.api.variant.AndroidComponentsExtension
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -21,15 +23,24 @@ android {
         }
     }
 
-    flavorDimensions += "dim"
+    flavorDimensions += "server"
+    flavorDimensions += "store"
     productFlavors {
-        create("debb") {
-            dimension = "dim"
+        create("prod") {
+            dimension = "server"
         }
-        create("prodb") {
-            dimension = "dim"
+        create("dev") {
+            dimension = "server"
+        }
+
+        create("google") {
+            dimension = "store"
+        }
+        create("huawei") {
+            dimension = "store"
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -43,7 +54,8 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(project(":feature-c"))
+    implementation(libs.androidx.constraintlayout)
+    "googleImplementation"(project(":feature-c"))
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

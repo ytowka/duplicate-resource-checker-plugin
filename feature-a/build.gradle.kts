@@ -1,6 +1,9 @@
+import com.android.build.api.variant.AndroidComponentsExtension
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    //id("org.danilkha.reportAndroid")
 }
 
 android {
@@ -27,6 +30,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
 }
 
 dependencies {

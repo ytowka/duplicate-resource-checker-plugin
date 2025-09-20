@@ -56,36 +56,36 @@ private fun ProjectTree.fill(
     parent: String,
     component: ResolvedComponentResult,
     resolvedDependencies: MutableSet<String>,
-    root: Project,
 ) {
-    val dependencies = component.dependencies.filter { it.requested is ProjectComponentSelector }
+
+    val dependencies = component.dependencies.filter {
+        it.requested is ProjectComponentSelector
+    }
     dependencies.forEach { dep ->
         val project = dep.requested as ProjectComponentSelector
         val projectPath = project.projectPath
         insert(parent, projectPath)
 
-        root.findProject(projectPath)
-
         if (dep !is ResolvedDependencyResult) return@forEach
         if (resolvedDependencies.contains(projectPath)) return@forEach
         resolvedDependencies += projectPath
         dep.requested
-        fill(projectPath, dep.selected, resolvedDependencies, root)
+        fill(projectPath, dep.selected, resolvedDependencies)
     }
 }
 
 internal fun Project.getProjectDependencies(
-    configuration: String,
+    configurations: List<String>,
 ): Set<String> {
     val projectTree = ProjectTree(root = project.path)
-    val rootComponents = project.configurations.matching { it.name == configuration }
+    val rootComponents = project.configurations.matching { it.name in configurations }
         .map { it.incoming.resolutionResult.rootComponent }
 
 
     // Long operation (contains side effects)
     for (component in rootComponents) {
         val resolvedDependencies: MutableSet<String> = mutableSetOf()
-        projectTree.fill(project.path, component.get(), resolvedDependencies, rootProject)
+        projectTree.fill(project.path, component.get(), resolvedDependencies)
         for (projectPath in resolvedDependencies) {
             if (projectPath != project.path) project.evaluationDependsOn(projectPath)
         }

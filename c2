@@ -1,0 +1,8 @@
+SingleOperation(
+flow=null, operation=Operation(
+type=B01, paymentSystemId=EQ, route=07001, time=null, isNonConfirm=true, isNotNeedExecuteImmediately=false, xmlData=null, parameters=[
+Parameter(name=#ACCD, value=40817810810210018962, type=CHAR),
+Parameter(name=#RACC, value=40817810410210018964, type=CHAR),
+Parameter(name=#CURR, value=RUR, type=CHAR),
+Parameter(name=#SUMM, value=0, type=DECIMAL)
+], externalFields=null, senderId=null, senderCvv=null, recipientId=null, recipientNumber=null, recipientName=null, amount=null, smartVistaRoute=null, customerLocation=null, preferredAuthMethod=null, forceDisabledExternalAuth=false, async=null, additionalInfo=null), wsVersion=VERSION_10)"}
