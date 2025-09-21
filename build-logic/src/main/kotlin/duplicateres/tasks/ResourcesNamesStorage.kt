@@ -1,27 +1,48 @@
 package duplicateres.tasks
 
-import java.io.File
 
 class ResourcesNamesStorage {
 
-    private val storage = mutableMapOf<String, MutableMap<String, MutableList<File>>>()
+    private val storage = mutableMapOf<String, MutableMap<String, MutableList<String>>>()
 
     fun add(
         type: String,
         name: String,
-        rFile: File
+        project: String
     ) {
         if (!storage.contains(type)) {
             storage[type] = mutableMapOf()
         }
         if (!storage[type]!!.contains(name)) {
-            storage[type]!![name] = mutableListOf(rFile)
+            storage[type]!![name] = mutableListOf(project)
         } else {
-            storage[type]!![name]!!.add(rFile)
+            storage[type]!![name]!!.add(project)
         }
     }
 
-    fun forEach(action: (Map.Entry<String, Map<String, List<File>>>) -> Unit) {
+    fun addAll(
+        type: String,
+        name: String,
+        projects: List<String>
+    ) {
+        if (!storage.contains(type)) {
+            storage[type] = mutableMapOf()
+        }
+        if (!storage[type]!!.contains(name)) {
+            storage[type]!![name] = projects.toMutableList()
+        } else {
+            storage[type]!![name]!!.addAll(projects)
+        }
+    }
+
+    fun getProjects(type: String, name: String): List<String> {
+        return storage[type]?.get(name) ?: emptyList()
+    }
+
+    val isEmpty: Boolean
+        get() = storage.isEmpty()
+
+    fun forEach(action: (Map.Entry<String, Map<String, List<String>>>) -> Unit) {
         storage.forEach(action)
     }
 }

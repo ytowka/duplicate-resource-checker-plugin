@@ -6,7 +6,7 @@ import org.gradle.api.Task
 import org.gradle.api.file.RegularFile
 import org.gradle.api.provider.Provider
 import org.gradle.internal.extensions.stdlib.capitalized
-
+import java.io.File
 
 private const val BASELINE_DIRECTORY = "duplicateResBaseline"
 private const val BASELINE_FILE_EXTENSION = ".txt"
@@ -15,10 +15,14 @@ fun Project.findParseLocalResourceTask(variant: Variant): Provider<Task> {
     return tasks.named("parse${variant.name.capitalized()}LocalResources")
 }
 
-fun Project.getBaselineFile(variant: Variant): Provider<RegularFile> {
-    val file = project.file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
+fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
+    val baselineFile = file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
         .takeIf { it.exists() }
-    val property = project.objects.fileProperty()
-    property.set(file)
+    val property = objects.fileProperty()
+    property.set(baselineFile)
     return property
+}
+
+fun getBaselineFilePath(variant: Variant): String {
+    return "$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION"
 }

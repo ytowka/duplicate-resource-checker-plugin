@@ -1,9 +1,8 @@
 package duplicateres.plugin
 
-import org.gradle.api.provider.ListProperty
-
+import org.gradle.api.provider.SetProperty
 
 interface DuplicateResourceExtension {
 
-    val excludeResourceType: ListProperty<String>
+    val excludeResourceType: SetProperty<String>
 }
