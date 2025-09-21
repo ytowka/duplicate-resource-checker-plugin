@@ -23,6 +23,6 @@ fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
     return property
 }
 
-fun getBaselineFilePath(variant: Variant): String {
-    return "$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION"
+fun Project.getBaselineFile(variant: Variant): File {
+    return file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
 }

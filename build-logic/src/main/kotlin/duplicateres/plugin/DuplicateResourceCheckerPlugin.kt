@@ -7,7 +7,7 @@ import duplicateres.tasks.BaseDuplicateResourcesTask
 import duplicateres.tasks.CreateBaselineDuplicateResourcesTask
 import duplicateres.tasks.FindDuplicateResourcesTask
 import duplicateres.utils.findParseLocalResourceTask
-import duplicateres.utils.getBaselineFilePath
+import duplicateres.utils.getBaselineFile
 import duplicateres.utils.getBaselineFileProvider
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -48,7 +48,7 @@ class DuplicateResourceCheckerPlugin : Plugin<Project> {
 
             project.tasks.register<CreateBaselineDuplicateResourcesTask>("${appVariant.name}$BASELINE_TASK_NAME") {
                 baseConfigure(project, allResFiles, appVariant, pluginConfig)
-                baselineFilePath.set(getBaselineFilePath(appVariant))
+                baselineFile.set(project.getBaselineFile(appVariant))
             }
         }
     }
@@ -59,13 +59,12 @@ class DuplicateResourceCheckerPlugin : Plugin<Project> {
         appVariant: Variant,
         extension: DuplicateResourceExtension,
     ) {
-        inputs.files(allResFiles)
         val localResFileParseTask = project.findParseLocalResourceTask(appVariant)
         val localResourceListOutputs = localResFileParseTask.map { it.outputs.files }
 
         group = JavaBasePlugin.VERIFICATION_GROUP
-        libraryResFiles.set(allResFiles)
-        localResFiles.set(localResourceListOutputs)
+        libraryResFiles.from(allResFiles)
+        localResFiles.from(localResourceListOutputs)
         excludeResTypes.set(extension.excludeResourceType)
     }
 }

@@ -3,6 +3,7 @@ package duplicateres.tasks
 import duplicateres.utils.findProjectByResFile
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
+import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.file.FileCollection
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.logging.Logging
@@ -11,6 +12,7 @@ import org.gradle.api.provider.Property
 import org.gradle.api.provider.SetProperty
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
 
@@ -22,18 +24,18 @@ private const val DROP_LIBRARY_FILE_LINE_COUNT = 1
 
 abstract class BaseDuplicateResourcesTask : DefaultTask(){
 
-    @get:Input
-    abstract val libraryResFiles: Property<FileCollection>
+    @get:InputFiles
+    abstract val libraryResFiles: ConfigurableFileCollection
 
-    @get:Input
-    abstract val localResFiles: Property<FileCollection>
+    @get:InputFiles
+    abstract val localResFiles: ConfigurableFileCollection
 
     @get:Input
     abstract val excludeResTypes: SetProperty<String>
 
     fun populateResourceStorage(resourcesNamesStorage: ResourcesNamesStorage) {
         val excludeTypes = excludeResTypes.get()
-        libraryResFiles.get()
+        libraryResFiles
             // filter to exclude external libraries resource files. May be useful in future
             .filter { it.path.contains(BUILD_DIRECTORY) }
             .forEach { libraryResFile ->
@@ -47,7 +49,7 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
             }
 
         // local file is only file in collection
-        val localResFile = localResFiles.get().first()
+        val localResFile = localResFiles.first()
 
         localResFile
             .readLines()

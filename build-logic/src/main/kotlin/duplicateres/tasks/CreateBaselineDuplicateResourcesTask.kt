@@ -15,9 +15,6 @@ import java.io.PrintWriter
 
 abstract class CreateBaselineDuplicateResourcesTask : BaseDuplicateResourcesTask(){
 
-    @get:Input
-    abstract val baselineFilePath: Property<String>
-
     @get:OutputFile
     abstract val baselineFile: RegularFileProperty
 
@@ -27,24 +24,25 @@ abstract class CreateBaselineDuplicateResourcesTask : BaseDuplicateResourcesTask
         populateResourceStorage(resourcesNamesStorage)
 
         val duplicates = findResourceDuplicates(resourcesNamesStorage, ResourcesNamesStorage())
-        //baselineFile.set(createBaseline(duplicates))
+        baselineFile.get().asFile.apply {
+            createNewFile()
+            writeBaseline(duplicates)
+        }
     }
 
-    private fun createBaseline(duplicates: ResourcesNamesStorage): File {
-        val file = project.file(baselineFilePath)
-        file.createNewFile()
-        PrintWriter(file).use { writer ->
+    private fun File.writeBaseline(duplicates: ResourcesNamesStorage) {
+        PrintWriter(this).use { writer ->
             duplicates.forEach { (type, resourcesInProjects) ->
                 resourcesInProjects.forEach { (resName, projects) ->
                     writer.println(buildString {
                         append(type)
                         append(" ")
                         append(resName)
+                        append(" ")
                         append(projects.joinToString(separator = " "))
                     })
                 }
             }
         }
-        return file
     }
 }
