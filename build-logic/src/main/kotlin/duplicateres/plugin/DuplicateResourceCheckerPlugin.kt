@@ -9,6 +9,7 @@ import duplicateres.tasks.FindDuplicateResourcesTask
 import duplicateres.utils.findParseLocalResourceTask
 import duplicateres.utils.getBaselineFile
 import duplicateres.utils.getBaselineFileProvider
+import duplicateres.utils.buildProjectsMap
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.type.ArtifactTypeDefinition
@@ -66,5 +67,7 @@ class DuplicateResourceCheckerPlugin : Plugin<Project> {
         libraryResFiles.from(allResFiles)
         localResFiles.from(localResourceListOutputs)
         excludeResTypes.set(extension.excludeResourceType)
+        projectPaths.set(project.buildProjectsMap())
+        appProjectPath.set(project.path)
     }
 }

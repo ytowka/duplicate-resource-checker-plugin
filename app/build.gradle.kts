@@ -71,3 +71,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+duplicateResourceFinder {
+    excludeResourceType = setOf("id")
+}

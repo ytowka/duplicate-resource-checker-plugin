@@ -26,3 +26,9 @@ fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
 fun Project.getBaselineFile(variant: Variant): File {
     return file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
 }
+
+fun Project.buildProjectsMap(): Map<String, String> {
+    return rootProject.allprojects.associate {
+        it.projectDir.path to it.path
+    }
+}

@@ -39,7 +39,11 @@ abstract class CreateBaselineDuplicateResourcesTask : BaseDuplicateResourcesTask
                         append(" ")
                         append(resName)
                         append(" ")
-                        append(projects.joinToString(separator = " "))
+                        append(
+                            projects
+                                .sorted()
+                                .joinToString(separator = " ")
+                        )
                     })
                 }
             }

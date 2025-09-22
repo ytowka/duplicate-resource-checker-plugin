@@ -1,20 +1,12 @@
 package duplicateres.tasks
 
-import duplicateres.utils.findProjectByResFile
 import org.gradle.api.DefaultTask
-import org.gradle.api.Project
 import org.gradle.api.file.ConfigurableFileCollection
-import org.gradle.api.file.FileCollection
-import org.gradle.api.file.RegularFileProperty
-import org.gradle.api.logging.Logging
-import org.gradle.api.provider.ListProperty
+import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.SetProperty
 import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.Optional
-import org.gradle.api.tasks.TaskAction
 
 private const val BUILD_DIRECTORY = "/build/"
 
@@ -33,18 +25,25 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
     @get:Input
     abstract val excludeResTypes: SetProperty<String>
 
+    @get:Input
+    abstract val projectPaths: MapProperty<String, String>
+
+    @get:Input
+    abstract val appProjectPath: Property<String>
+
     fun populateResourceStorage(resourcesNamesStorage: ResourcesNamesStorage) {
         val excludeTypes = excludeResTypes.get()
         libraryResFiles
             // filter to exclude external libraries resource files. May be useful in future
             .filter { it.path.contains(BUILD_DIRECTORY) }
             .forEach { libraryResFile ->
-                val project = findProjectByResFile(libraryResFile)
+                val projectDir = libraryResFile.path.substringBefore(BUILD_DIRECTORY)
+                val projectPath = projectPaths.get()[projectDir] ?: ""
                 libraryResFile
                     .readLines()
                     .drop(DROP_LIBRARY_FILE_LINE_COUNT)
                     .forEach { resLine ->
-                        addNameToStorage(resourcesNamesStorage, resLine, excludeTypes, project)
+                        addNameToStorage(resourcesNamesStorage, resLine, excludeTypes, projectPath)
                     }
             }
 
@@ -55,7 +54,7 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
             .readLines()
             .drop(DROP_LOCAL_FILE_LINE_COUNT)
             .forEach { resLine ->
-                addNameToStorage(resourcesNamesStorage, resLine, excludeTypes, project)
+                addNameToStorage(resourcesNamesStorage, resLine, excludeTypes, appProjectPath.get())
             }
     }
 
@@ -63,11 +62,11 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
         storage: ResourcesNamesStorage,
         resourceLine: String,
         excludes: Set<String>,
-        project: Project
+        project: String
     ) {
         val (type, resourceName) = resourceLine.split(" ")
         if(type !in excludes) {
-            storage.add(type, resourceName, project.path)
+            storage.add(type, resourceName, project)
         }
     }
 

@@ -1,1 +1,0 @@
-string aaa :feature-a :feature-b :feature-c

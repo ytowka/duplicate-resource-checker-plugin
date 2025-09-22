@@ -2,4 +2,5 @@
 <resources>
     <string name="string1">aaa</string>
     <string name="aaa">aaa</string>
+    <id name="id1">123123</id>
 </resources>
