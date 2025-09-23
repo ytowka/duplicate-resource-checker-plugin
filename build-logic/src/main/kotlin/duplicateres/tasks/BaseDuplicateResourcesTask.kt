@@ -1,5 +1,6 @@
 package duplicateres.tasks
 
+import duplicateres.plugin.ResourceType
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.provider.MapProperty
@@ -23,7 +24,7 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
     abstract val localResFiles: ConfigurableFileCollection
 
     @get:Input
-    abstract val excludeResTypes: SetProperty<String>
+    abstract val excludeResTypes: SetProperty<ResourceType>
 
     @get:Input
     abstract val projectPaths: MapProperty<String, String>
@@ -33,9 +34,15 @@ abstract class BaseDuplicateResourcesTask : DefaultTask(){
 
     fun populateResourceStorage(resourcesNamesStorage: ResourcesNamesStorage) {
         val excludeTypes = excludeResTypes.get()
+            .map { it.type }
+            .toSet()
+
         libraryResFiles
             // filter to exclude external libraries resource files. May be useful in future
-            .filter { it.path.contains(BUILD_DIRECTORY) }
+            .filter {
+                println(it.path)
+                it.path.contains(BUILD_DIRECTORY)
+            }
             .forEach { libraryResFile ->
                 val projectDir = libraryResFile.path.substringBefore(BUILD_DIRECTORY)
                 val projectPath = projectPaths.get()[projectDir] ?: ""

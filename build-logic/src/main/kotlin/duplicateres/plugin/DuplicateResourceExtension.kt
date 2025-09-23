@@ -4,5 +4,5 @@ import org.gradle.api.provider.SetProperty
 
 interface DuplicateResourceExtension {
 
-    val excludeResourceType: SetProperty<String>
+    val excludeResourceType: SetProperty<ResourceType>
 }

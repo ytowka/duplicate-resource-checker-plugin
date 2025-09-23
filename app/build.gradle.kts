@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(project(":feature-b"))
+    implementation(":mylibrary")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -73,5 +74,5 @@ dependencies {
 }
 
 duplicateResourceFinder {
-    excludeResourceType = setOf("id")
+    //excludeResourceType.set(setOf("id"))
 }

@@ -3,4 +3,17 @@
     <string name="aaa">bbb</string>
     <string name="hello">world</string>
     <id name="id1">123123</id>
+    <fraction name="frac">1</fraction>
+    <integer-array name="intarr">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+    <array name="arr">
+        <item>arr1</item>
+        <item>arr2</item>
+    </array>
+    <string-array name="strarr">
+        <item>strarr1</item>
+        <item>strarr2</item>
+    </string-array>
 </resources>
