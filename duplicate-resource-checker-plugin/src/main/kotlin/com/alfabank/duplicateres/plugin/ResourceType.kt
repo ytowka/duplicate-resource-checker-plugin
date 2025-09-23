@@ -1,6 +1,8 @@
-package duplicateres.plugin
+package com.alfabank.duplicateres.plugin
 
-enum class ResourceType(val type: String) {
+public enum class ResourceType(
+    public val type: String
+) {
     ANIM("anim"),
     ANIMATOR("animator"),
     ARRAY("array"),
@@ -24,6 +26,5 @@ enum class ResourceType(val type: String) {
     STYLE("style"),
     STYLEABLE("styleable"),
     TRANSITION("transition"),
-    VECTOR("vector"),
-    XML("xml")
+    XML("xml"),
 }

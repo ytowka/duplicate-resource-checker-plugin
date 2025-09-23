@@ -1,15 +1,17 @@
-package duplicateres.plugin
+package com.alfabank.duplicateres.plugin
 
+import com.alfabank.duplicateres.tasks.BaseDuplicateResourcesTask
+import com.alfabank.duplicateres.tasks.CreateBaselineDuplicateResourcesTask
+import com.alfabank.duplicateres.tasks.FindDuplicateResourcesTask
+import com.alfabank.duplicateres.utils.buildProjectsMap
+import com.alfabank.duplicateres.utils.configurePlugin
+import com.alfabank.duplicateres.utils.findParseLocalResourceTask
+import com.alfabank.duplicateres.utils.getBaselineFile
+import com.alfabank.duplicateres.utils.getBaselineFileProvider
 import com.android.build.api.variant.AndroidComponentsExtension
+import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.android.build.api.variant.Variant
 import com.android.build.gradle.internal.publishing.AndroidArtifacts
-import duplicateres.tasks.BaseDuplicateResourcesTask
-import duplicateres.tasks.CreateBaselineDuplicateResourcesTask
-import duplicateres.tasks.FindDuplicateResourcesTask
-import duplicateres.utils.findParseLocalResourceTask
-import duplicateres.utils.getBaselineFile
-import duplicateres.utils.getBaselineFileProvider
-import duplicateres.utils.buildProjectsMap
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.type.ArtifactTypeDefinition
@@ -19,16 +21,24 @@ import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
 
+private const val BASE_TASK_NAME = "DuplicateResources"
+private const val ANDROID_PLUGIN_ID = "com.android.base"
 
-private const val FIND_TASK_NAME = "FindDuplicateResources"
-private const val BASELINE_TASK_NAME = "CreateDuplicateResBaseline"
-
-class DuplicateResourceCheckerPlugin : Plugin<Project> {
+public class DuplicateResourceCheckerPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
-        val androidComponent = project.extensions.getByType(AndroidComponentsExtension::class)
-
         val pluginConfig = project.extensions.create("duplicateResourceFinder", DuplicateResourceExtension::class)
+
+        project.configurePlugin(ANDROID_PLUGIN_ID) {
+            configureTasks(project, pluginConfig)
+        }
+    }
+
+    private fun configureTasks(project: Project, pluginConfig: DuplicateResourceExtension) {
+        val androidComponent = project.extensions.getByType(AndroidComponentsExtension::class)
+        check(androidComponent is ApplicationAndroidComponentsExtension) {
+            "Plugin must be applied to application module"
+        }
 
         androidComponent.onVariants { appVariant ->
             val config = appVariant.runtimeConfiguration
@@ -41,13 +51,16 @@ class DuplicateResourceCheckerPlugin : Plugin<Project> {
                 .artifacts
                 .artifactFiles
 
-
-            project.tasks.register<FindDuplicateResourcesTask>("${appVariant.name}$FIND_TASK_NAME") {
+            project.tasks.register<FindDuplicateResourcesTask>(
+                appVariant.computeTaskName("check", BASE_TASK_NAME)
+            ) {
                 baseConfigure(project, allResFiles, appVariant, pluginConfig)
                 baselineFile.set(project.getBaselineFileProvider(appVariant))
             }
 
-            project.tasks.register<CreateBaselineDuplicateResourcesTask>("${appVariant.name}$BASELINE_TASK_NAME") {
+            project.tasks.register<CreateBaselineDuplicateResourcesTask>(
+                appVariant.computeTaskName("baseline", BASE_TASK_NAME)
+            ) {
                 baseConfigure(project, allResFiles, appVariant, pluginConfig)
                 baselineFile.set(project.getBaselineFile(appVariant))
             }
@@ -67,7 +80,7 @@ class DuplicateResourceCheckerPlugin : Plugin<Project> {
         libraryResFiles.from(allResFiles)
         localResFiles.from(localResourceListOutputs)
         excludeResTypes.set(extension.excludeResourceType)
-        projectPaths.set(project.buildProjectsMap())
+        allProjectPaths.set(project.buildProjectsMap())
         appProjectPath.set(project.path)
     }
 }

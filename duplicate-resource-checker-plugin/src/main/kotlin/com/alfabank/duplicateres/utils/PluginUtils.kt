@@ -1,9 +1,11 @@
-package duplicateres.utils
+package com.alfabank.duplicateres.utils
 
 import com.android.build.api.variant.Variant
+import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.api.file.RegularFile
+import org.gradle.api.plugins.AppliedPlugin
 import org.gradle.api.provider.Provider
 import org.gradle.internal.extensions.stdlib.capitalized
 import java.io.File
@@ -11,11 +13,18 @@ import java.io.File
 private const val BASELINE_DIRECTORY = "duplicateResBaseline"
 private const val BASELINE_FILE_EXTENSION = ".txt"
 
-fun Project.findParseLocalResourceTask(variant: Variant): Provider<Task> {
+internal fun Project.configurePlugin(
+    name: String,
+    action: Action<AppliedPlugin>,
+) = pluginManager.withPlugin(name) {
+    action.execute(this)
+}
+
+internal fun Project.findParseLocalResourceTask(variant: Variant): Provider<Task> {
     return tasks.named("parse${variant.name.capitalized()}LocalResources")
 }
 
-fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
+internal fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
     val baselineFile = file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
         .takeIf { it.exists() }
     val property = objects.fileProperty()
@@ -23,11 +32,11 @@ fun Project.getBaselineFileProvider(variant: Variant): Provider<RegularFile> {
     return property
 }
 
-fun Project.getBaselineFile(variant: Variant): File {
+internal fun Project.getBaselineFile(variant: Variant): File {
     return file("$BASELINE_DIRECTORY/${variant.name}$BASELINE_FILE_EXTENSION")
 }
 
-fun Project.buildProjectsMap(): Map<String, String> {
+internal fun Project.buildProjectsMap(): Map<String, String> {
     return rootProject.allprojects.associate {
         it.projectDir.path to it.path
     }

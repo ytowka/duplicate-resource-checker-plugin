@@ -3,8 +3,8 @@ import com.android.build.api.variant.AndroidComponentsExtension
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    //id("org.danilkha.reportAndroid")
-    id("org.danilkha.duplicateRes")
+    id("com.alfabank.duplicate-res")
+
 }
 
 android {

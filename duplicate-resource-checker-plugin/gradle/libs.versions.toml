@@ -1,0 +1,70 @@
+[versions]
+
+# Kotlin
+kotlin = "2.1.20"
+
+# KSP
+ksp = "2.1.20-1.0.31"
+
+# AGP
+agp = "8.8.2"
+
+# AndroidX
+androidx-core = "1.15.0"
+androidx-lifecycle = "2.8.7"
+androidx-activity = "1.10.1"
+androidx-navigation = "2.8.9"
+androidx-room = "2.6.1"
+androidx-datastore = "1.1.4"
+androidx-lint = "1.0.0-alpha03"
+
+# AndroidX Test
+androidx-test-ext-junit = "1.2.1"
+androidx-test-espresso = "3.6.1"
+
+# Detekt
+detekt = "1.23.8"
+
+# JUnit
+junit = "4.13.2"
+
+[libraries]
+
+# Kotlin Gralde Plugin
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# Android Gradle Plugin
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
+# AndroidX
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-lint = { module = "androidx.lint:lint-gradle", version.ref = "androidx-lint" }
+
+# AndroidX Test
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext-junit" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
+
+# JUnit
+junit = { module = "junit:junit", version.ref = "junit" }
+
+# Detekt
+detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
+
+[plugins]
+
+# Kotlin
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# KSP
+
+# AGP
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
+
+
+# Detekt
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
