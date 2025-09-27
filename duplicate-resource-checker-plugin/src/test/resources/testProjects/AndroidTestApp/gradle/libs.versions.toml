@@ -9,6 +9,14 @@ ksp = "2.1.20-1.0.31"
 # AGP
 agp = "8.9.3"
 
+coreKtx = "1.17.0"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+
 # AndroidX
 androidx-core = "1.15.0"
 androidx-lifecycle = "2.8.7"
@@ -27,6 +35,7 @@ detekt = "1.23.8"
 
 # JUnit
 junit = "5.10.0"
+materialVersion = "1.13.0"
 
 [libraries]
 
@@ -40,6 +49,13 @@ android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref 
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-lint = { module = "androidx.lint:lint-gradle", version.ref = "androidx-lint" }
 
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
 # AndroidX Test
 androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext-junit" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
@@ -52,12 +68,15 @@ junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref 
 detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 
 [plugins]
 
 # Kotlin
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+duplicate-res = { id = "ru.alfabank.android.android-duplicate-res-checker", version = "1.0" }
 
 # KSP
 

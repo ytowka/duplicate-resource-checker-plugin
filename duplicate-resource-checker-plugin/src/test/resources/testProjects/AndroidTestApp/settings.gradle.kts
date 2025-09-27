@@ -1,13 +1,8 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
+        mavenLocal()
         gradlePluginPortal()
     }
 }
@@ -15,10 +10,12 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        mavenLocal()
         mavenCentral()
     }
 }
 
 rootProject.name = "AndroidTestApp"
 include(":app")
+include(":feature-lib")
  

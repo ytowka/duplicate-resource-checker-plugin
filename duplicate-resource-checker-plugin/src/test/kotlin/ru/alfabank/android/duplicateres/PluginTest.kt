@@ -13,30 +13,20 @@ class PluginTest {
 
     @Test
     fun test() {
-        val projectDir = createTempDirectory("gradle-plugin-test")
-            .toFile()
+        val projectDir = createTempDirectory("gradle-plugin-test").toFile()
 
-        //println("output")
-        //val testProject = File(javaClass.classLoader.getResource("testProjects/AndroidTestApp")!!.path)
+        deepCopy(javaClass.classLoader.getResource("testProjects/AndroidTestApp").path, projectDir.path)
 
-        deepCopy(
-            javaClass.classLoader.getResource("testProjects/AndroidTestApp").path, projectDir.path
-        )
-
-
-        //val test1Project = Path("/Users/alfa/AndroidStudioProjects/DuplicateResourceCheckerPlugin/duplicate-resource-checker-plugin/src/test/resources/testProjects/AndroidTestApp1")
-        //Files.copy(testProject.toPath(), test1Project, StandardCopyOption.REPLACE_EXISTING)
-
-        println(projectDir.listFiles().map { it.name })
-
+        println("runner output:")
         val runner = GradleRunner.create()
             .withProjectDir(projectDir)
+            .withDebug(true)
             .withPluginClasspath()
             .withGradleVersion("8.11.1")
-            .withArguments("tasks")
+            //.withArguments("tasks", "--stacktrace")
+            .withArguments("checkDebugDuplicateResources")
+            .forwardOutput()
             .build()
-
-        println(runner.output)
 
     }
 

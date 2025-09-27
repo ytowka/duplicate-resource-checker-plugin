@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "ru.alfabank.android.androidduplicatereschecker"
-version = "0.1"
+version = "1.0"
 
 kotlin {
     compilerOptions {
@@ -25,8 +25,8 @@ java {
 }
 
 dependencies {
-    compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.android.gradlePlugin)
+    implementation(libs.kotlin.gradlePlugin)
+    implementation(libs.android.gradlePlugin)
 
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
@@ -39,6 +39,18 @@ gradlePlugin {
             implementationClass = "ru.alfabank.android.duplicateres.plugin.DuplicateResourceCheckerPlugin"
             displayName = "Duplicate android resources checker plugin"
             description = "A plugin for checking duplicate android resources across all modules"
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "ru.alfabank.android.android-duplicate-res-checker"
+            artifactId = "ru.alfabank.android.android-duplicate-res-checker"
+            version = "1.0"
+
+            from(components.named("java").get())
         }
     }
 }
