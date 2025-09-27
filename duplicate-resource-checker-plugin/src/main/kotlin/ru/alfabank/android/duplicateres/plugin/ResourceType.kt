@@ -1,4 +1,4 @@
-package com.alfabank.duplicateres.plugin
+package ru.alfabank.android.duplicateres.plugin
 
 public enum class ResourceType(
     public val type: String

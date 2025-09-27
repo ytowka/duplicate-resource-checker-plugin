@@ -1,15 +1,12 @@
-import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     `java-gradle-plugin`
-    `kotlin-dsl`
     `maven-publish`
-    alias(libs.plugins.detekt)
-    alias(libs.plugins.android.lint)
+    `kotlin-dsl`
 }
 
-group = "com.alfabank.duplicateres"
+group = "ru.alfabank.android.androidduplicatereschecker"
 version = "0.1"
 
 kotlin {
@@ -31,17 +28,15 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
 
-    testImplementation(kotlin("test-junit5"))
-
-    detektPlugins(libs.detekt.formatting)
-    lintChecks(libs.androidx.lint)
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
 }
 
 gradlePlugin {
     plugins {
         create("duplicateResPlugin") {
-            id = "com.alfabank.duplicate-res"
-            implementationClass = "com.alfabank.duplicateres.plugin.DuplicateResourceCheckerPlugin"
+            id = "ru.alfabank.android.android-duplicate-res-checker"
+            implementationClass = "ru.alfabank.android.duplicateres.plugin.DuplicateResourceCheckerPlugin"
             displayName = "Duplicate android resources checker plugin"
             description = "A plugin for checking duplicate android resources across all modules"
         }
@@ -50,8 +45,4 @@ gradlePlugin {
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
-}
-
-tasks.named<Detekt>("detekt") {
-    config = project.files("../config/detekt/detekt-environment.yml")
 }

@@ -1,0 +1,1742 @@
+{
+  "tabs": [
+    {
+      "transactionId": "82e3db9e-9582-4776-888b-fe9e400770e3",
+      "fields": [
+        {
+          "id": "#SDUI_LOGO_CASHBACK",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "StackView",
+            "content": {
+              "axis": "horizontal",
+              "alignment": "center",
+              "distribution": "weighted",
+              "children": [
+                {
+                  "type": "StackView",
+                  "content": {
+                    "axis": "horizontal",
+                    "alignment": "center",
+                    "distribution": "weighted",
+                    "children": [
+                      {
+                        "type": "ImageView",
+                        "content": {
+                          "url": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/alfa-pay-2024_m_color.png",
+                          "urlDark": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/alfa-pay-2024_m_red-white.png",
+                          "shape": "rect"
+                        },
+                        "size": {
+                          "width": 128.0,
+                          "height": 32.0
+                        },
+                        "hidden": false
+                      }
+                    ]
+                  },
+                  "constraints": [],
+                  "size": {
+                    "width": 128.0,
+                    "height": 32.0
+                  },
+                  "hidden": false
+                },
+                {
+                  "type": "Spacer",
+                  "content": {},
+                  "hidden": false
+                },
+                {
+                  "type": "StackView",
+                  "content": {
+                    "axis": "horizontal",
+                    "alignment": "center",
+                    "distribution": "weighted",
+                    "children": [
+                      {
+                        "type": "ImageView",
+                        "content": {
+                          "url": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/cashback_available_light.png",
+                          "urlDark": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/cashback_available_dark.png",
+                          "shape": "rect"
+                        },
+                        "action": {
+                          "type": "deeplink",
+                          "url": "alfabank://markdown_viewer?endpoint=v1/alfapay-multistep/info"
+                        },
+                        "size": {
+                          "width": 98.0,
+                          "height": 32.0
+                        },
+                        "hidden": false
+                      }
+                    ]
+                  },
+                  "constraints": [],
+                  "size": {
+                    "width": 98.0,
+                    "height": 32.0
+                  },
+                  "hidden": false
+                }
+              ],
+              "padding": {
+                "top": "xs",
+                "left": "m",
+                "bottom": "m",
+                "right": "m"
+              }
+            },
+            "hidden": false
+          }
+        },
+        {
+          "id": "#SDUI_LOGO_NO_CASHBACK",
+          "hidden": true,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "StackView",
+            "content": {
+              "axis": "horizontal",
+              "alignment": "center",
+              "distribution": "weighted",
+              "children": [
+                {
+                  "type": "StackView",
+                  "content": {
+                    "axis": "horizontal",
+                    "alignment": "center",
+                    "distribution": "weighted",
+                    "children": [
+                      {
+                        "type": "ImageView",
+                        "content": {
+                          "url": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/alfa-pay-2024_m_color.png",
+                          "urlDark": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/alfa-pay-2024_m_red-white.png",
+                          "shape": "rect"
+                        },
+                        "size": {
+                          "width": 128.0,
+                          "height": 32.0
+                        },
+                        "hidden": false
+                      }
+                    ]
+                  },
+                  "constraints": [],
+                  "size": {
+                    "width": 128.0,
+                    "height": 32.0
+                  },
+                  "hidden": false
+                },
+                {
+                  "type": "Spacer",
+                  "content": {},
+                  "hidden": false
+                },
+                {
+                  "type": "StackView",
+                  "content": {
+                    "axis": "horizontal",
+                    "alignment": "center",
+                    "distribution": "weighted",
+                    "children": [
+                      {
+                        "type": "ImageView",
+                        "content": {
+                          "url": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/cashback_disabled_light.png",
+                          "urlDark": "https://test-alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/cashback_disabled_dark.png",
+                          "shape": "rect"
+                        },
+                        "size": {
+                          "width": 132.0,
+                          "height": 32.0
+                        },
+                        "hidden": false
+                      }
+                    ]
+                  },
+                  "constraints": [],
+                  "size": {
+                    "width": 132.0,
+                    "height": 32.0
+                  },
+                  "hidden": false
+                }
+              ],
+              "padding": {
+                "top": "xs",
+                "left": "m",
+                "bottom": "m",
+                "right": "m"
+              }
+            },
+            "hidden": false
+          }
+        },
+        {
+          "id": "#SDUI_PURCHASE_PACKAGE",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "StackView",
+            "content": {
+              "axis": "vertical",
+              "alignment": "center",
+              "distribution": "default",
+              "children": [
+                {
+                  "type": "IconView",
+                  "content": {
+                    "backgroundColor": "backgroundColorSecondary",
+                    "backgroundIcon": {
+                      "url": "https://alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/logo_bag_android.png"
+                    },
+                    "size": "large",
+                    "shape": "superellipse"
+                  },
+                  "hidden": false
+                },
+                {
+                  "type": "Spacer",
+                  "content": {},
+                  "hidden": false
+                },
+                {
+                  "type": "TextView",
+                  "content": {
+                    "leftText": {
+                      "textContentKind": "plain",
+                      "value": "10 000 ₽",
+                      "color": "textColorPrimary",
+                      "typography": "HeadlineMedium"
+                    },
+                    "padding": {
+                      "top": "m",
+                      "left": "extendedHorizontalMargin",
+                      "bottom": "zero",
+                      "right": "extendedHorizontalMargin"
+                    },
+                    "horizontalAlignment": "center"
+                  },
+                  "hidden": false
+                },
+                {
+                  "type": "TextView",
+                  "content": {
+                    "leftText": {
+                      "textContentKind": "plain",
+                      "value": "Shmakov-api",
+                      "color": "textColorSecondary",
+                      "typography": "ParagraphPrimaryMedium"
+                    },
+                    "padding": {
+                      "top": "xxs",
+                      "left": "extendedHorizontalMargin",
+                      "bottom": "zero",
+                      "right": "extendedHorizontalMargin"
+                    },
+                    "horizontalAlignment": "center"
+                  },
+                  "hidden": false
+                }
+              ],
+              "padding": {
+                "top": "s",
+                "left": "l",
+                "bottom": "m",
+                "right": "l"
+              }
+            },
+            "hidden": false
+          }
+        },
+        {
+          "type": "SDUI_SELECT",
+          "id": "#CARD_SELECTOR",
+          "value": "212128396",
+          "selectionTitle": "Карта для оплаты",
+          "items": [
+            {
+              "key": "212128403",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4611",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "2 996 600 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4611",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 299660000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            },
+            {
+              "key": "212128409",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4660",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "2 996 600 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4660",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 299660000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            },
+            {
+              "key": "212128398",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4579",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "250 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4579",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 25000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            },
+            {
+              "key": "212128396",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4553",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "250 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4553",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 25000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            },
+            {
+              "key": "212128399",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4587",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "3 150 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4587",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 315000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            },
+            {
+              "key": "212128405",
+              "collapsedView": {
+                "type": "BannerWrapper",
+                "content": {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "type": "RightIconWrapper",
+                    "content": {
+                      "type": "RightIconWrapper",
+                      "content": {
+                        "type": "StackView",
+                        "content": {
+                          "type": "StackView",
+                          "axis": "horizontal",
+                          "alignment": "center",
+                          "children": [
+                            {
+                              "type": "CardIconView",
+                              "content": {
+                                "type": "CardIconView",
+                                "backgroundImage": {
+                                  "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                                },
+                                "cardNumber": "4637",
+                                "size": "medium",
+                                "paymentSystem": {
+                                  "name": "glyph-chevron-forward_m"
+                                }
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "l",
+                                "bottom": "zero",
+                                "right": "m"
+                              }
+                            },
+                            {
+                              "type": "DataView",
+                              "content": {
+                                "type": "DataView",
+                                "dataContent": {
+                                  "title": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "3 150 ₽",
+                                    "typography": "ActionPrimaryMedium"
+                                  },
+                                  "subtitle": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "Альфа-карта МИР",
+                                    "color": "textColorSecondary",
+                                    "typography": "ParagraphPrimarySmall"
+                                  },
+                                  "subvalue": {
+                                    "textContentKind": "plain",
+                                    "multiline": false,
+                                    "value": "",
+                                    "color": "textColorSecondary"
+                                  }
+                                },
+                                "indicatorAlignment": "leading",
+                                "extraPaddings": false
+                              },
+                              "constraints": [],
+                              "paddings": {
+                                "top": "zero",
+                                "left": "zero",
+                                "bottom": "zero",
+                                "right": "zero"
+                              }
+                            }
+                          ]
+                        },
+                        "constraints": [],
+                        "paddings": {
+                          "top": "zero",
+                          "left": "zero",
+                          "bottom": "zero",
+                          "right": "zero"
+                        }
+                      },
+                      "iconView": {
+                        "type": "IconView",
+                        "graphicType": "IconView",
+                        "icon": {
+                          "color": "graphicColorTertiary",
+                          "name": "glyph_chevron-down_m"
+                        }
+                      },
+                      "padding": {
+                        "top": "zero",
+                        "left": "zero",
+                        "bottom": "zero",
+                        "right": "l"
+                      }
+                    },
+                    "constraints": [],
+                    "paddings": {
+                      "top": "m",
+                      "left": "zero",
+                      "bottom": "m",
+                      "right": "m"
+                    }
+                  }
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "m",
+                  "bottom": "zero",
+                  "right": "m"
+                }
+              },
+              "selectionView": {
+                "type": "StackView",
+                "content": {
+                  "type": "StackView",
+                  "axis": "horizontal",
+                  "alignment": "center",
+                  "children": [
+                    {
+                      "type": "CardIconView",
+                      "content": {
+                        "type": "CardIconView",
+                        "backgroundImage": {
+                          "url": "https://testjmb.alfabank.ru/cards-images/cards/RR/images?layers=BACKGROUND,LOGO,PAYMENT_SYSTEM,RESERVED_1&width=100"
+                        },
+                        "cardNumber": "4637",
+                        "size": "medium",
+                        "paymentSystem": {
+                          "name": "glyph-chevron-forward_m"
+                        }
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "zero",
+                        "left": "xl",
+                        "bottom": "zero",
+                        "right": "s"
+                      }
+                    },
+                    {
+                      "type": "DataView",
+                      "content": {
+                        "type": "DataView",
+                        "dataContent": {
+                          "title": {
+                            "textContentKind": "amount",
+                            "multiline": false,
+                            "value": {
+                              "value": 315000,
+                              "currency": "RUR",
+                              "minorUnits": 100
+                            },
+                            "majorUnitTypography": "ActionPrimaryMedium",
+                            "majorUnitColor": "textColorPrimary",
+                            "minorUnitTypography": "ActionPrimaryMedium",
+                            "minorUnitColor": "textColorPrimary"
+                          },
+                          "subtitle": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "Альфа-карта МИР",
+                            "color": "textColorSecondary",
+                            "typography": "ParagraphPrimarySmall"
+                          },
+                          "subvalue": {
+                            "textContentKind": "plain",
+                            "multiline": false,
+                            "value": "",
+                            "color": "textColorSecondary"
+                          }
+                        },
+                        "indicatorAlignment": "leading",
+                        "extraPaddings": false
+                      },
+                      "constraints": [],
+                      "paddings": {
+                        "top": "m",
+                        "left": "zero",
+                        "bottom": "m",
+                        "right": "zero"
+                      }
+                    }
+                  ]
+                },
+                "constraints": [],
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                }
+              }
+            }
+          ],
+          "hidden": false,
+          "required": true,
+          "analytics": [
+            {
+              "label": "Card",
+              "category": "AlfaPay ecom",
+              "eventTypes": [
+                "ON_SELECT"
+              ],
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "parameters": [
+                {
+                  "id": "Status",
+                  "sensitive": false,
+                  "dimension": 1,
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "eventTypes": [
+                "ON_SELECT"
+              ],
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "parameters": [
+                {
+                  "id": "Status",
+                  "sensitive": false,
+                  "dimension": 2,
+                  "value": "false"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "#SDUI_NOT_ENOUGH_AMOUNT_ON_CHOSEN_CARD",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "StackView",
+            "content": {
+              "axis": "horizontal",
+              "alignment": "center",
+              "distribution": "weighted",
+              "children": [
+                {
+                  "type": "BannerWrapper",
+                  "content": {
+                    "content": {
+                      "type": "StackView",
+                      "content": {
+                        "axis": "horizontal",
+                        "alignment": "start",
+                        "distribution": "default",
+                        "children": [
+                          {
+                            "type": "StackView",
+                            "content": {
+                              "axis": "horizontal",
+                              "alignment": "center",
+                              "distribution": "weighted",
+                              "children": [
+                                {
+                                  "type": "ImageView",
+                                  "content": {
+                                    "url": "https://alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/rub-add.png",
+                                    "urlDark": "https://alfa-mobile.alfabank.ru/mobile/s3/static/mobile/alfapay/rub-add.png",
+                                    "shape": "rect"
+                                  },
+                                  "size": {
+                                    "width": 48.0,
+                                    "height": 48.0
+                                  },
+                                  "hidden": false
+                                }
+                              ]
+                            },
+                            "constraints": [],
+                            "size": {
+                              "width": 48.0,
+                              "height": 48.0
+                            },
+                            "hidden": false
+                          },
+                          {
+                            "type": "TextView",
+                            "content": {
+                              "leftText": {
+                                "textContentKind": "plain",
+                                "value": "Не хватает 9 750 ₽ — пополните карту со счёта",
+                                "color": "textColorPrimary",
+                                "typography": "ParagraphPrimarySmall"
+                              },
+                              "padding": {
+                                "top": "zero",
+                                "left": "extendedHorizontalMargin",
+                                "bottom": "zero",
+                                "right": "extendedHorizontalMargin"
+                              },
+                              "horizontalAlignment": "left"
+                            },
+                            "hidden": false
+                          }
+                        ],
+                        "padding": {
+                          "top": "s",
+                          "left": "zero",
+                          "bottom": "s",
+                          "right": "zero"
+                        }
+                      },
+                      "hidden": false
+                    },
+                    "contentInteractionEnabled": false,
+                    "contentEnabledState": true,
+                    "style": "stroke",
+                    "borderColor": "backgroundColorSecondary"
+                  },
+                  "hidden": false
+                }
+              ],
+              "padding": {
+                "top": "m",
+                "left": "zero",
+                "bottom": "xs",
+                "right": "zero"
+              }
+            },
+            "hidden": false
+          }
+        },
+        {
+          "id": "#VALIDATION",
+          "hidden": true,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "LabelView",
+            "content": {
+              "text": {
+                "textContentKind": "plain",
+                "value": "Недостаточно денег для оплаты",
+                "color": "graphicColorNegative",
+                "typography": "ParagraphPrimarySmall"
+              }
+            },
+            "paddings": {
+              "top": "s",
+              "left": "l",
+              "bottom": "zero",
+              "right": "l"
+            },
+            "hidden": false
+          }
+        }
+      ],
+      "step": {
+        "number": 1,
+        "screenNumber": 1,
+        "type": "STANDARD"
+      },
+      "handlers": [
+        {
+          "triggers": [
+            {
+              "sourceFieldId": "#CARD_SELECTOR",
+              "eventTypes": [
+                "SELECT"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "reload",
+              "type": "PUBLISH_EXTERNAL_EVENT",
+              "emitEvent": false,
+              "eventName": "reload",
+              "payload": {
+                "silent": {
+                  "static": false
+                },
+                "showError": {
+                  "static": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "footerInfo": {
+        "buttons": [
+          {
+            "id": "step-confirm",
+            "title": "Пополнить карту",
+            "style": "PRIMARY",
+            "stepType": "STANDARD",
+            "skipValidation": false,
+            "type": "SIMPLE_MULTISTEP",
+            "analytics": {
+              "label": "Buy",
+              "category": "AlfaPay ecom",
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "emittedEventType": "FORM_SUBMIT",
+              "parameters": [
+                {
+                  "id": "Partner name",
+                  "sensitive": false,
+                  "dimension": 3,
+                  "value": "Shmakov-api"
+                },
+                {
+                  "id": "Checkbox",
+                  "sensitive": false,
+                  "dimension": 4,
+                  "value": "false"
+                }
+              ]
+            }
+          }
+        ],
+        "buttonsAxis": "vertical"
+      },
+      "analytics": {
+        "label": "AlfaPay ecom",
+        "screen": "AlfaPay ecom order payment",
+        "category": "AlfaPay ecom",
+        "analyticsSystems": [
+          "snowplow"
+        ],
+        "parameters": [],
+        "additionalScreenAnalytics": [
+          {
+            "label": "AlfaPay ecom",
+            "category": "AlfaPay ecom",
+            "eventTypes": [
+              "ON_PAGE_LOADED"
+            ],
+            "analyticsSystems": [
+              "snowplow"
+            ],
+            "parameters": [
+              {
+                "id": "Amount",
+                "sensitive": false,
+                "dimension": 1,
+                "value": "6"
+              },
+              {
+                "id": "Sum",
+                "sensitive": false,
+                "dimension": 2,
+                "value": "10000"
+              },
+              {
+                "id": "Partner name",
+                "sensitive": false,
+                "dimension": 3,
+                "value": "Shmakov-api"
+              },
+              {
+                "id": "Checkbox",
+                "sensitive": false,
+                "dimension": 4,
+                "value": "false"
+              },
+              {
+                "id": "Status",
+                "sensitive": false,
+                "dimension": 7,
+                "value": "true"
+              },
+              {
+                "id": "Order Id",
+                "sensitive": false,
+                "dimension": 11,
+                "value": "8f4b7fe6-3431-41e2-82f5-d4be33449ca2"
+              }
+            ]
+          }
+        ]
+      },
+      "key": "-"
+    }
+  ]
+}

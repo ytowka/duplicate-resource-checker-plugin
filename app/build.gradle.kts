@@ -3,7 +3,7 @@ import com.android.build.api.variant.AndroidComponentsExtension
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.alfabank.duplicate-res")
+    id("ru.alfabank.android.android-duplicate-res-checker")
 
 }
 
@@ -73,6 +73,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-duplicateResourceFinder {
+duplicateResourceChecker {
     //excludeResourceType.set(setOf("id"))
 }

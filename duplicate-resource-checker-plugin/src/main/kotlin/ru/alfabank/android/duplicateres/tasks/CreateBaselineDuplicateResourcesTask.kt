@@ -1,10 +1,10 @@
-package com.alfabank.duplicateres.tasks
+package ru.alfabank.android.duplicateres.tasks
 
-import com.alfabank.duplicateres.internal.ResourcesNamesStorage
-import com.alfabank.duplicateres.internal.findDuplicates
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
+import ru.alfabank.android.duplicateres.internal.ResourcesNamesStorage
+import ru.alfabank.android.duplicateres.internal.findDuplicates
 import java.io.File
 import java.io.PrintWriter
 

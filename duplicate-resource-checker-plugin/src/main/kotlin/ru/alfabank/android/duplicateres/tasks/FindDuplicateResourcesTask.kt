@@ -1,13 +1,13 @@
-package com.alfabank.duplicateres.tasks
+package ru.alfabank.android.duplicateres.tasks
 
-import com.alfabank.duplicateres.internal.ResourceInMultipleModulesException
-import com.alfabank.duplicateres.internal.ResourcesNamesStorage
-import com.alfabank.duplicateres.internal.findDuplicates
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
+import ru.alfabank.android.duplicateres.internal.ResourceInMultipleModulesException
+import ru.alfabank.android.duplicateres.internal.ResourcesNamesStorage
+import ru.alfabank.android.duplicateres.internal.findDuplicates
 
 public abstract class FindDuplicateResourcesTask : BaseDuplicateResourcesTask() {
 

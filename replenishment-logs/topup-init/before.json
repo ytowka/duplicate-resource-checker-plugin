@@ -1,0 +1,186 @@
+{
+  "tabs": [
+    {
+      "transactionId": "82e3db9e-9582-4776-888b-fe9e400770e3",
+      "fields": [
+        {
+          "id": "SDUI1",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "StackView",
+            "content": {
+              "axis": "vertical",
+              "alignment": "center",
+              "distribution": "weighted",
+              "children": [
+                {
+                  "type": "TextView",
+                  "content": {
+                    "leftText": {
+                      "textContentKind": "plain",
+                      "value": "Откуда пополнить",
+                      "color": "textColorPrimary",
+                      "typography": "HeadlineMedium"
+                    },
+                    "padding": {
+                      "top": "l",
+                      "left": "zero",
+                      "bottom": "s",
+                      "right": "zero"
+                    }
+                  },
+                  "hidden": false
+                },
+                {
+                  "type": "TextView",
+                  "content": {
+                    "leftText": {
+                      "textContentKind": "plain",
+                      "value": "Переведём 9 750 ₽ на карту ··4553",
+                      "color": "textColorSecondary",
+                      "typography": "ParagraphPrimarySmall"
+                    },
+                    "padding": {
+                      "top": "zero",
+                      "left": "zero",
+                      "bottom": "s",
+                      "right": "zero"
+                    }
+                  },
+                  "hidden": false
+                }
+              ],
+              "padding": {
+                "top": "zero",
+                "left": "m",
+                "bottom": "zero",
+                "right": "m"
+              }
+            },
+            "hidden": false
+          }
+        },
+        {
+          "type": "RADIO_GROUP",
+          "id": "RadioGroupDynamicFieldId1",
+          "value": "40817810810210018962",
+          "hidden": false,
+          "style": "DEFAULT",
+          "controlType": "CIRCLE_CHECKMARK",
+          "controlSide": "RIGHT",
+          "radioButtons": [
+            {
+              "id": "40817810810210018962",
+              "checked": true,
+              "label": "2 996 600 ₽",
+              "hint": "Текущий счёт ··8962"
+            }
+          ],
+          "analytics": [
+            {
+              "label": "Topup",
+              "category": "AlfaPay ecom",
+              "eventTypes": [
+                "ON_CHANGE"
+              ],
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "parameters": [
+                {
+                  "id": "AB Segment",
+                  "sensitive": false,
+                  "dimension": 8,
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "step": {
+        "number": 1,
+        "screenNumber": 0,
+        "type": "STANDARD"
+      },
+      "footerInfo": {
+        "buttons": [
+          {
+            "id": "step-replenishment",
+            "title": "Пополнить",
+            "style": "PRIMARY",
+            "stepType": "PAYMENT",
+            "skipValidation": false,
+            "type": "SIMPLE_MULTISTEP",
+            "analytics": {
+              "label": "Buy",
+              "category": "AlfaPay ecom",
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "emittedEventType": "FORM_SUBMIT",
+              "parameters": [
+                {
+                  "id": "Topup pay",
+                  "sensitive": false,
+                  "dimension": 19,
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        ],
+        "buttonsAxis": "vertical"
+      },
+      "analytics": {
+        "label": "Topup",
+        "screen": "AlfaPay ecom order payment",
+        "category": "AlfaPay ecom",
+        "analyticsSystems": [
+          "snowplow"
+        ],
+        "parameters": [],
+        "additionalScreenAnalytics": [
+          {
+            "label": "Topup",
+            "category": "AlfaPay ecom",
+            "eventTypes": [
+              "ON_PAGE_LOADED"
+            ],
+            "analyticsSystems": [
+              "snowplow"
+            ],
+            "parameters": [
+              {
+                "id": "Amount",
+                "sensitive": false,
+                "dimension": 1,
+                "value": "2"
+              }
+            ]
+          },
+          {
+            "label": "Topup",
+            "category": "AlfaPay ecom",
+            "eventTypes": [
+              "ON_PAGE_BACK"
+            ],
+            "analyticsSystems": [
+              "snowplow"
+            ],
+            "parameters": [
+              {
+                "id": "AB Segment",
+                "sensitive": false,
+                "dimension": 8,
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      },
+      "key": "-"
+    }
+  ]
+}

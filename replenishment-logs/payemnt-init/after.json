@@ -1,0 +1,790 @@
+{
+  "tabs": [
+    {
+      "transactionId": "a96028af-d03a-45c0-84a9-88f78584b3d8",
+      "fields": [
+        {
+          "id": "SDUI1",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "LabelView",
+            "content": {
+              "text": {
+                "textContentKind": "plain",
+                "value": "Пополнить карту ··4553",
+                "typography": "HeadlineMedium"
+              }
+            },
+            "paddings": {
+              "top": "xl",
+              "left": "m",
+              "bottom": "xs",
+              "right": "m"
+            },
+            "hidden": false
+          }
+        },
+        {
+          "type": "INPUT_MONEY",
+          "value": {
+            "value": 10000,
+            "currency": "RUR",
+            "minorUnits": 100
+          },
+          "id": "SUM1",
+          "hidden": true,
+          "required": true,
+          "readOnly": true,
+          "digitsOnly": true
+        },
+        {
+          "type": "INPUT_MONEY",
+          "value": {
+            "value": 50000,
+            "currency": "RUR",
+            "minorUnits": 100
+          },
+          "id": "SUM2",
+          "hidden": true,
+          "required": true,
+          "readOnly": true,
+          "digitsOnly": true
+        },
+        {
+          "type": "INPUT_MONEY",
+          "value": {
+            "value": 100000,
+            "currency": "RUR",
+            "minorUnits": 100
+          },
+          "id": "SUM3",
+          "hidden": true,
+          "required": true,
+          "readOnly": true,
+          "digitsOnly": true
+        },
+        {
+          "validation": [
+            {
+              "type": "MAX",
+              "id": "depositSumMaxValidation",
+              "value": {
+                "value": 299660000,
+                "currency": "RUR",
+                "minorUnits": 100
+              },
+              "message": "Недостаточно денег. Выберите другой счёт или уменьшите сумму пополнения"
+            },
+            {
+              "type": "MIN",
+              "id": "depositSumMinValidation",
+              "value": {
+                "value": 975000,
+                "currency": "RUR",
+                "minorUnits": 100
+              },
+              "message": "Минимум — 9750 ₽"
+            }
+          ],
+          "type": "INPUT_MONEY",
+          "label": "Сумма пополнения",
+          "value": {
+            "value": 1000000,
+            "currency": "RUR",
+            "minorUnits": 100
+          },
+          "id": "DEPOSIT_SUM",
+          "hidden": false,
+          "placeholder": "Например, 1 000",
+          "required": true,
+          "readOnly": false,
+          "digitsOnly": true
+        },
+        {
+          "type": "SDUI_MULTIPLE_SELECT",
+          "id": "SUM_SELECT",
+          "layout": "CAROUSEL",
+          "value": [],
+          "maxSelectedItemsCount": 1,
+          "hidden": false,
+          "required": false,
+          "items": [
+            {
+              "id": "multiple_select_sum1",
+              "defaultView": {
+                "type": "StackView",
+                "content": {
+                  "axis": "vertical",
+                  "alignment": "start",
+                  "distribution": "weighted",
+                  "children": [
+                    {
+                      "type": "StackView",
+                      "content": {
+                        "axis": "vertical",
+                        "alignment": "fill",
+                        "distribution": "default",
+                        "children": [
+                          {
+                            "type": "LabelView",
+                            "content": {
+                              "text": {
+                                "textContentKind": "plain",
+                                "value": "9750 ₽",
+                                "color": "textColorPrimary",
+                                "typography": "ParagraphPrimarySmall",
+                                "multiline": true,
+                                "maxLineCount": 2147483647
+                              },
+                              "horizontalAlignment": "left"
+                            },
+                            "tag": "sum_select_1_children_tag",
+                            "hidden": false,
+                            "version": 1
+                          }
+                        ]
+                      },
+                      "size": {
+                        "width": -2.0,
+                        "height": -2.0
+                      },
+                      "paddings": {
+                        "top": "xs",
+                        "left": "s",
+                        "bottom": "xs",
+                        "right": "s"
+                      },
+                      "hidden": false
+                    }
+                  ],
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": "xs",
+                    "topRight": "xs",
+                    "bottomRight": "xs",
+                    "bottomLeft": "xs"
+                  }
+                },
+                "tag": "sum_select_1_tag",
+                "size": {
+                  "width": -2.0,
+                  "height": -2.0
+                },
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                },
+                "hidden": false,
+                "version": 1,
+                "appearance": {
+                  "type": "plain",
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": 8,
+                    "topRight": 8,
+                    "bottomLeft": 8,
+                    "bottomRight": 8
+                  }
+                }
+              },
+              "disabled": false
+            },
+            {
+              "id": "multiple_select_sum2",
+              "defaultView": {
+                "type": "StackView",
+                "content": {
+                  "axis": "vertical",
+                  "alignment": "start",
+                  "distribution": "weighted",
+                  "children": [
+                    {
+                      "type": "StackView",
+                      "content": {
+                        "axis": "vertical",
+                        "alignment": "fill",
+                        "distribution": "default",
+                        "children": [
+                          {
+                            "type": "LabelView",
+                            "content": {
+                              "text": {
+                                "textContentKind": "plain",
+                                "value": "+100 ₽",
+                                "color": "textColorPrimary",
+                                "typography": "ParagraphPrimarySmall",
+                                "multiline": true,
+                                "maxLineCount": 2147483647
+                              },
+                              "horizontalAlignment": "left"
+                            },
+                            "tag": "sum_select_2_children_tag",
+                            "hidden": false,
+                            "version": 1
+                          }
+                        ]
+                      },
+                      "size": {
+                        "width": -2.0,
+                        "height": -2.0
+                      },
+                      "paddings": {
+                        "top": "xs",
+                        "left": "s",
+                        "bottom": "xs",
+                        "right": "s"
+                      },
+                      "hidden": false
+                    }
+                  ],
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": "xs",
+                    "topRight": "xs",
+                    "bottomRight": "xs",
+                    "bottomLeft": "xs"
+                  }
+                },
+                "tag": "sum_select_2_tag",
+                "size": {
+                  "width": -2.0,
+                  "height": -2.0
+                },
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                },
+                "hidden": false,
+                "version": 1,
+                "appearance": {
+                  "type": "plain",
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": 8,
+                    "topRight": 8,
+                    "bottomLeft": 8,
+                    "bottomRight": 8
+                  }
+                }
+              },
+              "disabled": false
+            },
+            {
+              "id": "multiple_select_sum3",
+              "defaultView": {
+                "type": "StackView",
+                "content": {
+                  "axis": "vertical",
+                  "alignment": "start",
+                  "distribution": "weighted",
+                  "children": [
+                    {
+                      "type": "StackView",
+                      "content": {
+                        "axis": "vertical",
+                        "alignment": "fill",
+                        "distribution": "default",
+                        "children": [
+                          {
+                            "type": "LabelView",
+                            "content": {
+                              "text": {
+                                "textContentKind": "plain",
+                                "value": "+500 ₽",
+                                "color": "textColorPrimary",
+                                "typography": "ParagraphPrimarySmall",
+                                "multiline": true,
+                                "maxLineCount": 2147483647
+                              },
+                              "horizontalAlignment": "left"
+                            },
+                            "tag": "sum_select_3_children_tag",
+                            "hidden": false,
+                            "version": 1
+                          }
+                        ]
+                      },
+                      "size": {
+                        "width": -2.0,
+                        "height": -2.0
+                      },
+                      "paddings": {
+                        "top": "xs",
+                        "left": "s",
+                        "bottom": "xs",
+                        "right": "s"
+                      },
+                      "hidden": false
+                    }
+                  ],
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": "xs",
+                    "topRight": "xs",
+                    "bottomRight": "xs",
+                    "bottomLeft": "xs"
+                  }
+                },
+                "tag": "sum_select_3_tag",
+                "size": {
+                  "width": -2.0,
+                  "height": -2.0
+                },
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                },
+                "hidden": false,
+                "version": 1,
+                "appearance": {
+                  "type": "plain",
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": 8,
+                    "topRight": 8,
+                    "bottomLeft": 8,
+                    "bottomRight": 8
+                  }
+                }
+              },
+              "disabled": false
+            },
+            {
+              "id": "multiple_select_sum4",
+              "defaultView": {
+                "type": "StackView",
+                "content": {
+                  "axis": "vertical",
+                  "alignment": "start",
+                  "distribution": "weighted",
+                  "children": [
+                    {
+                      "type": "StackView",
+                      "content": {
+                        "axis": "vertical",
+                        "alignment": "fill",
+                        "distribution": "default",
+                        "children": [
+                          {
+                            "type": "LabelView",
+                            "content": {
+                              "text": {
+                                "textContentKind": "plain",
+                                "value": "+1000 ₽",
+                                "color": "textColorPrimary",
+                                "typography": "ParagraphPrimarySmall",
+                                "multiline": true,
+                                "maxLineCount": 2147483647
+                              },
+                              "horizontalAlignment": "left"
+                            },
+                            "tag": "sum_select_4_children_tag",
+                            "hidden": false,
+                            "version": 1
+                          }
+                        ]
+                      },
+                      "size": {
+                        "width": -2.0,
+                        "height": -2.0
+                      },
+                      "paddings": {
+                        "top": "xs",
+                        "left": "s",
+                        "bottom": "xs",
+                        "right": "s"
+                      },
+                      "hidden": false
+                    }
+                  ],
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": "xs",
+                    "topRight": "xs",
+                    "bottomRight": "xs",
+                    "bottomLeft": "xs"
+                  }
+                },
+                "tag": "sum_select_4_tag",
+                "size": {
+                  "width": -2.0,
+                  "height": -2.0
+                },
+                "paddings": {
+                  "top": "zero",
+                  "left": "zero",
+                  "bottom": "zero",
+                  "right": "zero"
+                },
+                "hidden": false,
+                "version": 1,
+                "appearance": {
+                  "type": "plain",
+                  "backgroundColor": "backgroundColorSecondary",
+                  "corners": {
+                    "topLeft": 8,
+                    "topRight": 8,
+                    "bottomLeft": 8,
+                    "bottomRight": 8
+                  }
+                }
+              },
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "id": "SDUI2",
+          "hidden": false,
+          "type": "SDUI_FIELD",
+          "view": {
+            "type": "LabelView",
+            "content": {
+              "text": {
+                "textContentKind": "plain",
+                "value": "Со счета",
+                "typography": "ActionPrimaryLarge"
+              }
+            },
+            "paddings": {
+              "top": "l",
+              "left": "m",
+              "bottom": "xxs",
+              "right": "m"
+            },
+            "hidden": false
+          }
+        },
+        {
+          "type": "RADIO_GROUP",
+          "id": "RadioGroupDynamicFieldId1",
+          "value": "40817810810210018962",
+          "hidden": false,
+          "style": "DEFAULT",
+          "controlType": "RADIO_DOT",
+          "controlSide": "RIGHT",
+          "radioButtons": [
+            {
+              "id": "40817810810210018962",
+              "checked": true,
+              "label": "2 996 600 ₽",
+              "hint": "Текущий счёт ··8962"
+            }
+          ],
+          "analytics": [
+            {
+              "label": "Topup",
+              "category": "AlfaPay ecom",
+              "eventTypes": [
+                "ON_CHANGE"
+              ],
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "parameters": [
+                {
+                  "id": "AB Segment",
+                  "sensitive": false,
+                  "dimension": 8,
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "step": {
+        "number": 1,
+        "screenNumber": 0,
+        "type": "STANDARD"
+      },
+      "handlers": [
+        {
+          "triggers": [
+            {
+              "eventTypes": [
+                "LOST_FOCUS"
+              ],
+              "sourceFieldId": "SUM_SELECT"
+            }
+          ],
+          "condition": {
+            "type": "EQUALS",
+            "left": {
+              "dynamic": {
+                "type": "FIELD_VALUE",
+                "fieldId": "SUM_SELECT"
+              }
+            },
+            "right": {
+              "static": [
+                "multiple_select_sum1"
+              ]
+            }
+          },
+          "operations": [
+            {
+              "type": "SET_VALUE",
+              "emitEvent": false,
+              "value": {
+                "static": {
+                  "value": 975000,
+                  "currency": "RUR",
+                  "minorUnits": 100
+                }
+              },
+              "fieldId": "DEPOSIT_SUM"
+            }
+          ]
+        },
+        {
+          "triggers": [
+            {
+              "eventTypes": [
+                "LOST_FOCUS"
+              ],
+              "sourceFieldId": "SUM_SELECT"
+            }
+          ],
+          "condition": {
+            "type": "EQUALS",
+            "left": {
+              "dynamic": {
+                "type": "FIELD_VALUE",
+                "fieldId": "SUM_SELECT"
+              }
+            },
+            "right": {
+              "static": [
+                "multiple_select_sum2"
+              ]
+            }
+          },
+          "operations": [
+            {
+              "type": "SET_VALUE",
+              "emitEvent": false,
+              "value": {
+                "dynamic": {
+                  "type": "SUMM",
+                  "extractors": [
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "DEPOSIT_SUM"
+                    },
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "SUM1"
+                    }
+                  ]
+                }
+              },
+              "fieldId": "DEPOSIT_SUM"
+            }
+          ]
+        },
+        {
+          "triggers": [
+            {
+              "eventTypes": [
+                "LOST_FOCUS"
+              ],
+              "sourceFieldId": "SUM_SELECT"
+            }
+          ],
+          "condition": {
+            "type": "EQUALS",
+            "left": {
+              "dynamic": {
+                "type": "FIELD_VALUE",
+                "fieldId": "SUM_SELECT"
+              }
+            },
+            "right": {
+              "static": [
+                "multiple_select_sum3"
+              ]
+            }
+          },
+          "operations": [
+            {
+              "type": "SET_VALUE",
+              "emitEvent": false,
+              "value": {
+                "dynamic": {
+                  "type": "SUMM",
+                  "extractors": [
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "DEPOSIT_SUM"
+                    },
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "SUM2"
+                    }
+                  ]
+                }
+              },
+              "fieldId": "DEPOSIT_SUM"
+            }
+          ]
+        },
+        {
+          "triggers": [
+            {
+              "eventTypes": [
+                "LOST_FOCUS"
+              ],
+              "sourceFieldId": "SUM_SELECT"
+            }
+          ],
+          "condition": {
+            "type": "EQUALS",
+            "left": {
+              "dynamic": {
+                "type": "FIELD_VALUE",
+                "fieldId": "SUM_SELECT"
+              }
+            },
+            "right": {
+              "static": [
+                "multiple_select_sum4"
+              ]
+            }
+          },
+          "operations": [
+            {
+              "type": "SET_VALUE",
+              "emitEvent": false,
+              "value": {
+                "dynamic": {
+                  "type": "SUMM",
+                  "extractors": [
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "DEPOSIT_SUM"
+                    },
+                    {
+                      "type": "FIELD_VALUE",
+                      "fieldId": "SUM3"
+                    }
+                  ]
+                }
+              },
+              "fieldId": "DEPOSIT_SUM"
+            }
+          ]
+        },
+        {
+          "triggers": [
+            {
+              "eventTypes": [
+                "CHANGE"
+              ],
+              "sourceFieldId": "RadioGroupDynamicFieldId1"
+            }
+          ],
+          "operations": [
+            {
+              "id": "reload1",
+              "type": "PUBLISH_EXTERNAL_EVENT",
+              "emitEvent": false,
+              "payload": {
+                "silent": {
+                  "static": true
+                }
+              },
+              "eventName": "RELOAD_STEP"
+            }
+          ]
+        }
+      ],
+      "footerInfo": {
+        "buttons": [
+          {
+            "id": "step-replenishment",
+            "title": "Пополнить",
+            "style": "PRIMARY",
+            "stepType": "PAYMENT",
+            "skipValidation": false,
+            "type": "SIMPLE_MULTISTEP",
+            "analytics": {
+              "label": "Buy",
+              "category": "AlfaPay ecom",
+              "analyticsSystems": [
+                "snowplow"
+              ],
+              "emittedEventType": "FORM_SUBMIT",
+              "parameters": [
+                {
+                  "id": "Topup pay",
+                  "sensitive": false,
+                  "dimension": 19,
+                  "value": "true"
+                }
+              ]
+            },
+            "disabled": false,
+            "visible": true
+          }
+        ],
+        "buttonsAxis": "vertical"
+      },
+      "analytics": {
+        "label": "Topup",
+        "screen": "AlfaPay ecom order payment",
+        "category": "AlfaPay ecom",
+        "analyticsSystems": [
+          "snowplow"
+        ],
+        "parameters": [],
+        "additionalScreenAnalytics": [
+          {
+            "label": "Topup",
+            "category": "AlfaPay ecom",
+            "eventTypes": [
+              "ON_PAGE_LOADED"
+            ],
+            "analyticsSystems": [
+              "snowplow"
+            ],
+            "parameters": [
+              {
+                "id": "Amount",
+                "sensitive": false,
+                "dimension": 1,
+                "value": "2"
+              }
+            ]
+          },
+          {
+            "label": "Topup",
+            "category": "AlfaPay ecom",
+            "eventTypes": [
+              "ON_PAGE_BACK"
+            ],
+            "analyticsSystems": [
+              "snowplow"
+            ],
+            "parameters": [
+              {
+                "id": "AB Segment",
+                "sensitive": false,
+                "dimension": 8,
+                "value": "1"
+              }
+            ]
+          }
+        ]
+      },
+      "key": "-"
+    }
+  ]
+}
